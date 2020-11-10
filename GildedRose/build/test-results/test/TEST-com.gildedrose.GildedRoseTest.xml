@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gildedrose.GildedRoseTest" tests="46" skipped="0" failures="0" errors="0" timestamp="2020-10-05T15:14:31" hostname="turing.local.isima.fr" time="0.115">
+  <properties/>
+  <testcase name="AB_qual_neg()" classname="com.gildedrose.GildedRoseTest" time="0.035"/>
+  <testcase name="AB_qual_pos()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_qual_neg1()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Whatever_qual_neg2()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_sup10_plus50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="BS_qual_0_49()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_10_plus50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_qual_0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_sell_0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="AB_qual_0_49()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="AB_qual_0_50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="BS_qual_entre_10_5()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_10()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="AB_qual_0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="AB_sell_0()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="BS_sell_neg()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_sell_pos()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_sell_neg()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_sell_pos()" classname="com.gildedrose.GildedRoseTest" time="0.005"/>
+  <testcase name="Conjured_sell_neg()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Conjured_sell_pos()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_neg_plus50()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Sulfuras_sell_neg()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Sulfuras_sell_pos()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="AB_sell_neg()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="AB_sell_pos()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Sulfuras_qual_0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Sulfuras_sell_0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="BS_qual_entre_10_5_plus50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="BS_qual_inf_5()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="BS_qual_sup10()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_qual_neg1htd()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="BS_qual_5_plus50()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_neg()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_0()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_5()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_sell_0()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Whatever_qual_pos()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Conjured_qual_neg()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Conjured_qual_pos()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="BS_qual_inf_5_49()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Conjured_qual_0()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Conjured_sell_0()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Sulfuras_qual_neg()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Sulfuras_qual_pos()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="AB_qual_pos_50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

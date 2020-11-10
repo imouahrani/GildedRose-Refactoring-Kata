@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.23.0" timestamp="2020-10-05T17:01:32.777">
+<file name="/home/local.isima.fr/mabenitoro/Téléchargements/GildedRose/src/main/java/com/gildedrose/GildedRose.java">
+<violation beginline="12" endline="12" begincolumn="10" endcolumn="14" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" variable="items" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="22" endline="37" begincolumn="9" endcolumn="9" rule="MissingBreakInSwitch" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#missingbreakinswitch" priority="3">
+A switch statement does not contain a break
+</violation>
+<violation beginline="57" endline="57" begincolumn="27" endcolumn="28" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateBackstageConcert" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="61" endline="61" begincolumn="27" endcolumn="27" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateBackstageConcert" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+</file>
+<file name="/home/local.isima.fr/mabenitoro/Téléchargements/GildedRose/src/main/java/com/gildedrose/Item.java">
+<violation beginline="5" endline="5" begincolumn="19" endcolumn="22" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="7" endline="7" begincolumn="16" endcolumn="21" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="sellIn" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="9" endline="9" begincolumn="16" endcolumn="22" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="quality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+</pmd>

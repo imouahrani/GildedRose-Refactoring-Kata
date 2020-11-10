@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GildedRose.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gilded-rose-kata</a> &gt; <a href="index.source.html" class="el_package">com.gildedrose</a> &gt; <span class="el_source">GildedRose.java</span></div><h1>GildedRose.java</h1><pre class="source lang-java linenums">package com.gildedrose;
+
+
+class GildedRose {
+    static final String AGED_BRIE = &quot;Aged Brie&quot;;
+    static final String BACKSTAGE_CONCERT = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
+    static final String SULFURAS = &quot;Sulfuras, Hand of Ragnaros&quot;;
+    static final String CONJURED = &quot;Conjured Mana Cake&quot;;
+
+    static final int MAX_QUALITY = 50;
+
+
+    Item[] items;
+
+<span class="fc" id="L15">    public GildedRose(Item[] items) {</span>
+<span class="fc" id="L16">        this.items = items;</span>
+<span class="fc" id="L17">    }</span>
+   // modification de la fonction updateQuality()
+   // chaque item a sa propre fonction qui va modifier sa qualité en fonction des jours qui passent 
+    public void updateQuality() {
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        for (Item item : items) {</span>
+<span class="fc bfc" id="L22" title="All 5 branches covered.">            switch (item.name) {</span>
+                case AGED_BRIE:
+<span class="fc" id="L24">                    updateAgedBrie(item);</span>
+<span class="fc" id="L25">                    break;</span>
+                case BACKSTAGE_CONCERT:
+<span class="fc" id="L27">                    updateBackstageConcert(item);</span>
+<span class="fc" id="L28">                    break;</span>
+                case SULFURAS:
+<span class="fc" id="L30">                    updateSulfuras(item);</span>
+<span class="fc" id="L31">                    break;</span>
+                case CONJURED:
+<span class="fc" id="L33">                    updateConjured(item);</span>
+<span class="fc" id="L34">                    break;</span>
+                default:
+<span class="fc" id="L36">                    updateOther(item);</span>
+            }
+        }
+<span class="fc" id="L39">    }</span>
+/* -------------------------------------mise à jour de la qualité spécifique à chaque item --------------------------------------------- */
+
+    private void updateAgedBrie(Item item) {
+        // augmente sa qualité (`quality`) plus le temps passe (`sellIn`)
+<span class="fc" id="L44">        item.sellIn--;</span>
+<span class="fc" id="L45">        addQuality(item);</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (isOutOfDate(item)) {</span>
+<span class="fc" id="L47">            addQuality(item);</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+    private void updateBackstageConcert(Item item) {
+        // augmente sa qualité (`quality`) plus le temps passe (`sellIn`)
+<span class="fc" id="L53">        item.sellIn--;</span>
+<span class="fc" id="L54">        addQuality(item); // +1</span>
+        // La qualité augmente de 2 quand il reste 10 jours ou moins
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (item.sellIn &lt; 10) {</span>
+<span class="fc" id="L57">            addQuality(item); // +1 =&gt; +2</span>
+        }
+        // La qualité augmente de 3 quand il reste 5 jours ou moins
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (item.sellIn &lt; 5) {</span>
+<span class="fc" id="L61">            addQuality(item); // +3</span>
+        }
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (isOutOfDate(item)) {</span>
+            // mais la qualité tombe à 0 après le concert.
+<span class="fc" id="L65">            item.quality = 0; </span>
+        }
+<span class="fc" id="L67">    }</span>
+    // &quot;Sulfuras&quot;, étant un objet légendaire, n'a pas de date de péremption et ne perd jamais en qualité (`quality`)
+    private void updateSulfuras(Item item) {
+        // tel sa qualité est de 80 et il ne change jamais.
+<span class="fc" id="L71">        item.quality = 80;</span>
+<span class="fc" id="L72">    }</span>
+
+    private void updateConjured(Item item) {
+        // les éléments &quot;Conjured&quot; voient leur qualité se dégrader de deux fois plus vite que les objets normaux.
+<span class="fc" id="L76">        item.sellIn--;</span>
+<span class="fc" id="L77">        minusQuality(item); // -1</span>
+<span class="fc" id="L78">        minusQuality(item); // -1 =&gt; -2</span>
+        
+        // Une fois que la date de péremption est passée, la qualité se dégrade deux fois plus rapidement.
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (isOutOfDate(item)) {</span>
+<span class="fc" id="L82">            minusQuality(item); // -1</span>
+<span class="fc" id="L83">            minusQuality(item); // -1 =&gt; -2</span>
+        }
+<span class="fc" id="L85">    }</span>
+    
+/* ------------------------------------------------------------------------------------------------------------------------ */
+    
+    /* Pour n'importe quel produit : 
+        - plus les jours passent, plus la quaité dimine
+        - si le produit est périmé, sa qualité diminue */
+    private void updateOther(Item item) {
+<span class="fc" id="L93">        item.sellIn--;</span>
+<span class="fc" id="L94">        minusQuality(item);</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (isOutOfDate(item)) {</span>
+<span class="fc" id="L96">            minusQuality(item);</span>
+        }
+<span class="fc" id="L98">    }</span>
+    
+     /* ---------- sellIn ---------- */
+    // tester si le produit est périmé, c'est à dire le sellin est négatif
+    private boolean isOutOfDate(Item item) {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        return item.sellIn &lt; 0;</span>
+    }
+    
+    /* ---------- Quality ---------- */
+    
+    // diminuer la qualité si celle-ci est supérieur à 0
+    private void minusQuality(Item item) {
+<span class="fc bfc" id="L110" title="All 2 branches covered.">        if (item.quality &gt; 0) {</span>
+<span class="fc" id="L111">            item.quality--;</span>
+        }
+<span class="fc" id="L113">    }</span>
+    // augmenter la qualité si elle est inférieur à son majoron c'est à dire 50
+    private void addQuality(Item item) {
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (item.quality &lt; MAX_QUALITY) {</span>
+<span class="fc" id="L117">            item.quality++;</span>
+        }
+<span class="fc" id="L119">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

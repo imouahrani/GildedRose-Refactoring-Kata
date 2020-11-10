@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id "jacoco"
+    id 'checkstyle'
+    id 'pmd'
+    id 'com.github.spotbugs' version '4.5.0'
+}
+
+group = 'com.gildedrose'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+test {
+  useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+
+
+}
+
+tasks.withType(JavaCompile) {
+  options.encoding = "UTF-8"
+  options.compilerArgs += ["-Xlint:all", "-Xlint:-serial"]
+}
+
+
+tasks.withType(Checkstyle) {
+  reports {
+    xml.enabled false
+    html.enabled true
+    html.stylesheet resources.text.fromFile('config/checkstyle/checkstyle.xsl')
+  }
+}
+
+spotbugs {
+  effort = "max"
+  reportLevel = "high"
+}
+
+spotbugsMain {
+  reports {
+    xml.enabled false
+    html.enabled true
+    html.stylesheet resources.text.fromFile('config/spotbugs/style.xsl')
+  }
+}
+
+pmd {
+  ignoreFailures = true
+}
+
+wrapper {
+    gradleVersion = '6.6.1'
+}
