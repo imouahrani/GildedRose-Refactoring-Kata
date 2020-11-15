@@ -65,9 +65,9 @@
         <module name="JavadocType">
             <property name="scope" value="public"/>
         </module>
-        <module name="JavadocVariable">
+        <!--<module name="JavadocVariable">
             <property name="scope" value="public"/>
-        </module>
+        </module>-->
         <module name="JavadocStyle">
             <property name="scope" value="public"/>
         </module>
@@ -146,7 +146,7 @@
         <module name="ExplicitInitialization"/>
         <module name="FallThrough"/>
         <!--<module name="FinalLocalVariable"/>-->
-        <module name="HiddenField"/>
+        <!--<module name="HiddenField"/>-->
         <module name="IllegalCatch"/>
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
@@ -196,10 +196,10 @@
         <module name="MutableException"/>
         <module name="OneTopLevelClass"/>
         <module name="ThrowsCount"/>
-        <module name="VisibilityModifier">
+        <!--<module name="VisibilityModifier">
             <property name="packageAllowed" value="true"/>
             <property name="protectedAllowed" value="true"/>
-        </module>
+        </module>-->
 
         <!-- Metrics -->
         <!-- See http://checkstyle.sourceforge.net/config_metrics.html -->
