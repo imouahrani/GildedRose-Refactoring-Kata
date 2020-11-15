@@ -417,4 +417,14 @@ class GildedRoseTest {
         assertThat(app.items[0].sellIn, is(-11));
     }
 
+    //==========ToString=============
+
+    @Test
+        void testToString() {
+        Item[] items = new Item[] {new Item("Conjured Mana Cake", 10, 10) };
+        GildedRose app = new GildedRose(items);
+
+        assertThat(app.items[0].toString(), is("Conjured Mana Cake, 10, 10"));
+    }
+
 }
