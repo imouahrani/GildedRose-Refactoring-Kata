@@ -15,7 +15,7 @@ class GildedRose {
         this.items = items;
     }
 
-	// chaque item a sa propre fonction qui va modifier sa qualité en fonction des jours qui passent
+    // chaque item a sa propre fonction qui va modifier sa qualité en fonction des jours qui passent
 
     public void updateQuality() {
         for (Item item : items) {
